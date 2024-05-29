@@ -185,8 +185,9 @@ public class DragonDestructionHandler {
 
                 AABB boundingBox;
                 if (ServerConfig.sizeChangesHitbox) {
+                    boolean squish = dragonStateHandler.getBody() == null ? dragonStateHandler.getBody().isSquish() : false;
                     double size = dragonStateHandler.getSize();
-                    double height = DragonSizeHandler.calculateModifiedHeight(DragonSizeHandler.calculateDragonHeight(size, ServerConfig.hitboxGrowsPastHuman), event.player.getPose(), ServerConfig.sizeChangesHitbox);
+                    double height = DragonSizeHandler.calculateModifiedHeight(DragonSizeHandler.calculateDragonHeight(size, ServerConfig.hitboxGrowsPastHuman), event.player.getPose(), ServerConfig.sizeChangesHitbox, squish);
                     double width = DragonSizeHandler.calculateDragonWidth(size, ServerConfig.hitboxGrowsPastHuman) / 2.0D;
                     boundingBox = DragonSizeHandler.calculateDimensions(width, height).makeBoundingBox(player.position());
                 } else {

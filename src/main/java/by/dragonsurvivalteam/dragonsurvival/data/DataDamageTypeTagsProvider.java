@@ -26,6 +26,8 @@ public class DataDamageTypeTagsProvider extends TagsProvider<DamageType> {
         super(output, Registries.DAMAGE_TYPE, lookupProvider.thenApply(provider -> DSRegistryProvider.BUILDER.buildPatch(RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY), provider)), modId, existingFileHelper);
     }
 
+
+    // TODO: I don't believe these tags are actually getting properly applied at this moment
     @Override
     protected void addTags(@NotNull final HolderLookup.Provider provider) {
         tag(DamageTypeTags.BYPASSES_ARMOR)

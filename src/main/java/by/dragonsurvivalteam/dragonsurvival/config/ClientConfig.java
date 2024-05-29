@@ -24,7 +24,4 @@ public class ClientConfig{
 
 	@ConfigOption(side = ConfigSide.CLIENT, category = "misc", key = "stableNightVision", comment = "When enabled it stops the blinking effect of night vision when low duration, disable if it causes rendering issues with other mods.")
 	public static Boolean stableNightVision = true;
-
-	@ConfigOption(side = ConfigSide.CLIENT, category = "misc", key = "emptyPoseStack", comment = "A fallback option in case the mod crashes with \"Pose stack not empty\". This could cause visual rendering problems.")
-	public static Boolean emptyPoseStack = false;
 }
